@@ -1,6 +1,5 @@
 # Sistema de Gestión Full Stack v1.0.9
 
---
 
 <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/8d9dc8c2-926c-46c4-8789-803a73191266" />
 

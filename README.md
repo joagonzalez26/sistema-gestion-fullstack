@@ -234,28 +234,6 @@ Estos valores pueden modificarse desde el archivo `.env`.
 
 ---
 
-## Variables de entorno
-
-El proyecto incluye un archivo `.env.example`.
-
-El archivo `.env` real no debe subirse al repositorio.
-
-Variables principales:
-
-```env
-PROJECT_NAME="Sistema de Gestión"
-STACK_NAME=sistema-gestion
-FIRST_SUPERUSER=admin@example.com
-FIRST_SUPERUSER_PASSWORD=changethis
-POSTGRES_DB=sistema_gestion
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-VITE_API_URL=http://localhost:8000
-ANTHROPIC_API_KEY=
-```
-
----
-
 ## Comandos útiles
 
 ### Levantar el sistema

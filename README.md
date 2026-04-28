@@ -1,46 +1,55 @@
 # Sistema de Gestión Full Stack v1.0.9
 
-> Nota personal: este proyecto fue desarrollado como práctica integral full stack, con el objetivo de trabajar una aplicación completa desde el frontend hasta el backend. La idea principal fue construir un sistema real de gestión comercial, integrando interfaz web, API, base de datos, autenticación, lógica de negocio, reportes, Docker y un asistente IA en modo local.
+--
+
+<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/8d9dc8c2-926c-46c4-8789-803a73191266" />
+
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/fe838924-aacf-4923-a752-52c2adbc0032" />
+
+---
+
+<img width="224" height="397" alt="3- opciones" src="https://github.com/user-attachments/assets/cee41d96-e55d-46f4-bf6f-3fb796e95573" />
+
+<img width="1234" height="728" alt="4- ia" src="https://github.com/user-attachments/assets/c071b787-0d51-4667-8259-6932dc4612a4" />
+
+--- 
+
+> Nota personal: este proyecto fue desarrollado como práctica integral full stack. La idea fue trabajar una aplicación completa desde el frontend hasta el backend, integrando interfaz web, API, base de datos, autenticación, Docker, reportes y un asistente IA local.
 
 Sistema web de gestión comercial desarrollado con **React**, **FastAPI**, **PostgreSQL** y **Docker**.
 
-El proyecto permite administrar productos, clientes, ventas, stock e informes comerciales desde una interfaz moderna tipo dashboard. También incluye un asistente IA en modo local, preparado para responder consultas básicas sobre el uso del sistema sin depender obligatoriamente de servicios externos.
+Permite administrar productos, clientes, ventas, stock y reportes comerciales desde una interfaz moderna tipo dashboard.
 
 ---
 
 ## Objetivo del proyecto
 
-El objetivo de este sistema fue construir una aplicación full stack funcional, entendiendo cómo se conectan las distintas capas de un software real:
+El objetivo fue construir un sistema full stack funcional, entendiendo cómo se conectan las distintas capas de una aplicación real:
 
-- Frontend moderno con React y TypeScript.
+- Frontend con React y TypeScript.
 - Backend con FastAPI.
-- Base de datos relacional con PostgreSQL.
-- Migraciones con Alembic.
+- Base de datos PostgreSQL.
 - Autenticación de usuarios.
-- Comunicación frontend-backend mediante API REST.
-- Contenedores con Docker.
-- Lógica de negocio aplicada a ventas y stock.
+- API REST.
+- Docker y Docker Compose.
+- Lógica de negocio para ventas y stock.
 - Reportes comerciales.
-- Asistente IA integrado en modo local.
-
-Este proyecto está pensado como parte de un portfolio de desarrollo, mostrando no solo la interfaz visual, sino también la estructura interna de una aplicación web completa.
+- Asistente IA en modo local.
 
 ---
 
 ## Funcionalidades principales
 
-- Autenticación de usuarios.
+- Login de usuario.
 - Dashboard con métricas reales.
 - Gestión de productos.
 - Gestión de clientes.
 - Registro de ventas.
-- Descuento automático de stock al vender.
+- Descuento automático de stock.
 - Control de inventario.
-- Detección de productos con stock bajo.
-- Historial de ventas.
 - Reportes comerciales.
 - Exportación CSV.
-- Asistente IA en modo local.
+- Asistente IA local.
 - Preparado para integración opcional con Claude mediante Anthropic API.
 
 ---
@@ -49,187 +58,90 @@ Este proyecto está pensado como parte de un portfolio de desarrollo, mostrando 
 
 ### Dashboard
 
-Panel principal con indicadores comerciales del sistema.
+Panel principal con indicadores del negocio:
 
-Incluye:
-
-- Total de productos.
-- Total de clientes.
+- Productos cargados.
+- Clientes activos.
 - Ventas del día.
 - Ventas del mes.
 - Ingresos totales.
 - Valor del inventario.
-- Productos con stock bajo.
+- Stock bajo.
 - Productos sin stock.
-- Últimos productos cargados.
-- Últimos clientes registrados.
-- Últimas ventas realizadas.
-
----
 
 ### Productos
 
-Módulo para administrar los productos del negocio.
-
-Permite:
-
-- Crear productos.
-- Editar productos existentes.
-- Eliminar productos.
-- Consultar listado de productos.
-- Registrar precio.
-- Registrar descripción.
-- Controlar stock inicial y stock actualizado.
-
-Cada producto puede ser utilizado luego en el módulo de ventas.
-
----
+Permite crear, editar, eliminar y listar productos.  
+Cada producto tiene nombre, descripción, precio y stock.
 
 ### Clientes
 
-Módulo para administrar clientes.
-
-Permite:
-
-- Crear clientes.
-- Editar datos de clientes.
-- Eliminar clientes.
-- Registrar email.
-- Registrar teléfono.
-- Registrar dirección o notas.
-- Marcar clientes como activos o inactivos.
-
-Los clientes registrados pueden seleccionarse al momento de crear una venta.
-
----
+Permite registrar clientes, editar sus datos y marcarlos como activos o inactivos.
 
 ### Ventas
 
-Módulo para registrar operaciones comerciales.
-
-Permite:
-
-- Seleccionar un cliente.
-- Seleccionar productos.
-- Indicar cantidad vendida.
-- Calcular el total de la venta.
-- Confirmar la operación.
-- Consultar historial de ventas.
-- Anular una venta, si corresponde.
-
-Al confirmar una venta, el sistema descuenta automáticamente el stock del producto vendido.
-
----
+Permite registrar ventas seleccionando cliente, producto y cantidad.  
+Al confirmar una venta, el sistema descuenta automáticamente el stock.
 
 ### Stock
 
-Módulo orientado al control de inventario.
-
-Permite visualizar:
-
-- Total de productos cargados.
-- Productos con stock disponible.
-- Productos con stock bajo.
-- Productos sin stock.
-- Precio de los productos.
-- Cantidad disponible de cada producto.
-
-El sistema considera stock bajo cuando un producto tiene entre 1 y 5 unidades disponibles.
-
----
+Permite controlar el inventario y detectar productos con stock bajo o sin stock.
 
 ### Reportes
 
-Sección con métricas comerciales generadas a partir de los datos reales del sistema.
-
-Incluye:
-
-- Ventas por período.
-- Ingresos del período.
-- Ingresos totales.
-- Producto más vendido.
-- Cliente con más compras.
-- Últimas ventas.
-- Alertas de stock.
-- Exportación CSV.
-
----
+Muestra métricas comerciales como ventas, ingresos, productos más vendidos y clientes con más compras.
 
 ### Asistente IA
 
-El sistema incluye un asistente IA integrado.
+El sistema incluye un asistente IA en modo local.  
+Puede responder consultas sobre productos, clientes, ventas, stock, reportes y consejos de gestión.
 
-Actualmente puede funcionar en dos modos:
+Si se configura `ANTHROPIC_API_KEY`, queda preparado para usar Claude mediante Anthropic API.
 
-#### Modo local
+---
 
-Funciona sin necesidad de API externa.
+## Tecnologías utilizadas
 
-El asistente responde consultas frecuentes usando una base de conocimiento interna del sistema.
+### Frontend
 
-Puede responder sobre:
+- React
+- TypeScript
+- Vite
+- TanStack Router
+- Tailwind CSS
+- shadcn/ui
+- Lucide Icons
 
-- Cómo agregar productos.
-- Cómo registrar clientes.
-- Cómo analizar stock bajo.
-- Cómo revisar ventas.
-- Cómo identificar clientes destacados.
-- Cómo identificar productos importantes.
-- Ideas para mejorar la gestión del negocio.
-- Consejos generales de uso del sistema.
+### Backend
 
-#### Modo con Claude
+- FastAPI
+- SQLModel
+- PostgreSQL
+- Alembic
+- Pydantic
+- JWT Auth
 
-El backend está preparado para conectarse con Claude mediante Anthropic API.
+### Infraestructura
 
-Para activar este modo, se debe configurar una API key en el archivo `.env`:
+- Docker
+- Docker Compose
+- Adminer
+- Mailcatcher
+- Traefik
 
-```env
-ANTHROPIC_API_KEY=tu_api_key
+---
 
-Si no se configura ninguna API key, el asistente continúa funcionando en modo local.
+## Estructura del proyecto
 
-Tecnologías utilizadas
-Frontend
-React
-TypeScript
-Vite
-TanStack Router
-Tailwind CSS
-shadcn/ui
-Lucide Icons
-Backend
-FastAPI
-SQLModel
-PostgreSQL
-Alembic
-Pydantic
-JWT Auth
-Infraestructura
-Docker
-Docker Compose
-Adminer
-Mailcatcher
-Traefik
-Estructura del proyecto
+```txt
 sistema-gestion/
 ├── backend/
 │   ├── app/
-│   │   ├── api/
-│   │   ├── core/
-│   │   ├── alembic/
-│   │   └── models.py
-│   ├── tests/
 │   ├── scripts/
 │   └── Dockerfile
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── routes/
-│   │   ├── components/
-│   │   ├── client/
-│   │   ├── hooks/
-│   │   └── lib/
 │   ├── public/
 │   └── Dockerfile
 │
@@ -241,66 +153,97 @@ sistema-gestion/
 ├── README.md
 ├── LICENSE
 └── NOTICE.md
-Requisitos
+```
 
-Para ejecutar el proyecto se necesita tener instalado:
+---
 
-Docker Desktop.
-Git.
-Visual Studio Code, opcional pero recomendado.
-Instalación y ejecución
-1. Clonar el repositorio
+## Requisitos
+
+Para ejecutar el proyecto se necesita:
+
+- Docker Desktop.
+- Git.
+- Visual Studio Code, opcional pero recomendado.
+
+---
+
+## Instalación y ejecución
+
+### 1. Clonar el repositorio
+
+```bash
 git clone https://github.com/joagonzalez26/sistema-gestion-fullstack.git
 cd sistema-gestion-fullstack
-2. Crear el archivo de variables de entorno
+```
+
+### 2. Crear el archivo `.env`
+
+```bash
 cp .env.example .env
-3. Levantar el proyecto con Docker
+```
+
+### 3. Levantar el proyecto
+
+```bash
 docker-compose up -d --build
+```
 
-En versiones nuevas de Docker también se puede usar:
+O con Docker Compose nuevo:
 
+```bash
 docker compose up -d --build
-4. Verificar el estado de los contenedores
+```
+
+### 4. Verificar contenedores
+
+```bash
 docker-compose ps
+```
 
-El resultado esperado es que los servicios principales estén activos:
+### 5. Verificar backend
 
-backend    Up
-frontend   Up
-db         healthy
-proxy      Up
-
-El servicio prestart puede aparecer como finalizado. Eso es normal, porque se utiliza para ejecutar migraciones y datos iniciales.
-
-5. Verificar el backend
+```bash
 curl -i http://localhost:8000/api/v1/utils/health-check/
+```
 
 Respuesta esperada:
 
+```txt
 HTTP/1.1 200 OK
 
 true
-6. Abrir la aplicación
-http://localhost:5173
-Usuario inicial
+```
 
-Por defecto, el sistema crea un usuario administrador inicial configurado desde el archivo .env.
+### 6. Abrir la aplicación
+
+```txt
+http://localhost:5173
+```
+
+---
+
+## Usuario inicial
 
 Credenciales de desarrollo:
 
+```txt
 Email: admin@example.com
 Password: changethis
+```
 
-Se recomienda modificar estos valores antes de usar el sistema en un entorno real.
+Estos valores pueden modificarse desde el archivo `.env`.
 
-Variables de entorno
+---
 
-El proyecto incluye un archivo .env.example con la configuración base.
+## Variables de entorno
 
-El archivo .env real no debe subirse al repositorio, ya que puede contener claves privadas o configuraciones sensibles.
+El proyecto incluye un archivo `.env.example`.
 
-Variables importantes:
+El archivo `.env` real no debe subirse al repositorio.
 
+Variables principales:
+
+```env
 PROJECT_NAME="Sistema de Gestión"
 STACK_NAME=sistema-gestion
 FIRST_SUPERUSER=admin@example.com
@@ -310,77 +253,91 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 VITE_API_URL=http://localhost:8000
 ANTHROPIC_API_KEY=
-Comandos útiles
+```
 
-Levantar el sistema:
+---
 
+## Comandos útiles
+
+### Levantar el sistema
+
+```bash
 docker-compose up -d
+```
 
-Levantar y reconstruir:
+### Levantar y reconstruir
 
+```bash
 docker-compose up -d --build
+```
 
-Apagar sin borrar datos:
+### Apagar sin borrar datos
 
+```bash
 docker-compose down
+```
 
-Apagar y borrar la base de datos local:
+### Apagar y borrar base de datos local
 
+```bash
 docker-compose down -v
+```
 
-Ver contenedores:
+### Ver logs del backend
 
-docker-compose ps
-
-Ver logs del backend:
-
+```bash
 docker-compose logs backend --tail=200
+```
 
-Ver logs del servicio de migraciones:
+### Ver logs de migraciones
 
+```bash
 docker-compose logs prestart --tail=200
+```
 
-Probar health-check:
+---
 
-curl -i http://localhost:8000/api/v1/utils/health-check/
-Estado actual
+## Estado actual
 
-Versión estable: v1.0.9
+Versión estable: **v1.0.9**
 
 Módulos funcionando:
 
-Login.
-Dashboard.
-Productos.
-Clientes.
-Ventas.
-Stock.
-Reportes.
-Asistente IA local.
-Posibles mejoras futuras
+- Login.
+- Dashboard.
+- Productos.
+- Clientes.
+- Ventas.
+- Stock.
+- Reportes.
+- Asistente IA local.
 
-Algunas ideas para próximas versiones:
+---
 
-Agregar roles de usuario.
-Mejorar permisos para administradores y empleados.
-Agregar carga de imágenes para productos.
-Generar comprobantes de venta en PDF.
-Agregar gráficos avanzados en reportes.
-Mejorar el módulo de clientes con historial individual.
-Implementar tests automatizados para módulos críticos.
-Conectar el asistente IA con datos reales del sistema.
-Preparar despliegue en producción.
-Autor
+## Posibles mejoras futuras
 
-Desarrollado y personalizado por Joaquín González.
+- Roles de usuario.
+- Comprobantes de venta en PDF.
+- Gráficos avanzados.
+- Historial individual por cliente.
+- Tests automatizados.
+- Despliegue en producción.
+- Integración real del asistente IA con datos del sistema.
 
-Este proyecto fue adaptado, ampliado y transformado en un sistema de gestión comercial full stack, incorporando módulos de productos, clientes, ventas, stock, reportes y asistente IA local.
+---
 
-Licencia
+## Autor
 
-Este proyecto conserva la licencia original MIT de la base open-source utilizada.
+Desarrollado y personalizado por **Joaquín González**.
+
+Proyecto realizado como práctica full stack, integrando frontend, backend, base de datos, Docker y módulos comerciales reales.
+
+---
+
+## Licencia
+
+Este proyecto conserva la licencia MIT original de la base open-source utilizada.
 
 Las modificaciones, personalización visual y módulos funcionales agregados fueron desarrollados por Joaquín González.
 
-Ver el archivo LICENSE
- para más información.
+Ver el archivo [LICENSE](./LICENSE) para más información.
